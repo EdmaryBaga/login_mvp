@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "506371644929",
+    "firebase_url": "https://flutrapp.firebaseio.com",
+    "project_id": "flutrapp",
+    "storage_bucket": "flutrapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506371644929:android:fd368723a4b717ba532a00",
+        "android_client_info": {
+          "package_name": "com.example.login_mvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506371644929-jbi5mikttvcnmm65i7p6fiq0900aiu53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmFiTliHsGZm4jqmcPW83kYo5k4bKvpvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506371644929-jbi5mikttvcnmm65i7p6fiq0900aiu53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
