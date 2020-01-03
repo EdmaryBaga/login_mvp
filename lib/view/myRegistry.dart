@@ -16,7 +16,12 @@ class _MyRegistryState extends State<MyRegistry> {
 
   String correo;
   String passwd;
-  Cuenta cuenta ;
+  Cuenta cuenta;
+
+  String logIn = "Log In";
+  String signUP = "Sign Up";
+
+  int titleF=1;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +32,26 @@ class _MyRegistryState extends State<MyRegistry> {
           child: Column(
             children: <Widget>[
               Text("Ingresa los siguiente datos"),
-              Form(
-                child: Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
+                    RaisedButton(
+                      child: Text(titleF==0?signUP:logIn),
+                      onPressed: (){
+                        setState(() {
+                          titleF ==0 ?titleF=1 : titleF=0;
+                        });
+                      },
+                    ),
+                   Text(titleF==0? logIn:signUP),
+
+
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(titleF==0?signUP:logIn),
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: "Correo",
@@ -51,16 +73,13 @@ class _MyRegistryState extends State<MyRegistry> {
                       child: Text("Enviar"),
                       onPressed: (){
                        cuenta = new Cuenta(correo, passwd);
-                       this.widget.presenter.onRegistryClicked(cuenta);
+                       this.widget.presenter.onRegistryClicked(cuenta, titleF);
                         //llama a un metodo del presentador pasandole el correo y password
-
                       },
                     )
                   ],
                 ),
 
-
-              )
             ],
           ),
         ),

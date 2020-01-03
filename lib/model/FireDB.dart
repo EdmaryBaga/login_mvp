@@ -15,6 +15,13 @@ class FireBD{
     return user.uid;
   }
 
+  Future<String> signIn(String email, String password) async {
+    AuthResult result = await _auth.signInWithEmailAndPassword(
+        email: email, password: password);
+    FirebaseUser user = result.user;
+    return user.uid;
+  }
+
   //sign out
 
 }

@@ -6,9 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistryPresenter{
 
-
-
-  void onRegistryClicked(Cuenta cuenta){  }
+  void onRegistryClicked(Cuenta cuenta, int titleF){  }
   //set de la vista o estado del login
 }
 
@@ -19,13 +17,22 @@ class BasicRegPresenter implements RegistryPresenter{
   FireBD _fire = new FireBD();
 
   @override
-  void onRegistryClicked(Cuenta cuenta) {
+  void onRegistryClicked(Cuenta cuenta, int titleF) {
     //llama a FireBase, mandandole la cuenta a registrar
+
     print("Entre al registro");
     print("${cuenta.correo}  ${cuenta.contrasena}");
-   print( _fire.signUp(cuenta.correo, cuenta.contrasena).catchError((error){
-     print(error);
-   }));
+    if(titleF ==0){
+      print( _fire.signUp(cuenta.correo, cuenta.contrasena).catchError((error){
+        print(error);
+      }));
+    }
+    else if(titleF == 1){
+      _fire.signIn(cuenta.correo, cuenta.contrasena).catchError((error){
+        print(error);
+      });
+    }
+
   }
 
 
